@@ -9,24 +9,19 @@ public class StackQueues {
 
         Scanner scanner = new Scanner(System.in);
         String input ="";
-        String current ="";
-
+        
         while(!"Home".equals(input = scanner.nextLine())){
 
             if (!"back".equals(input)) {
                 stack.push(input);
+                System.out.println(input);
             } else {
-                if (stack.isEmpty()){
+                if (stack.size() > 1) {
+                    stack.pop();
+                    System.out.println(stack.peek());
+                }else { 
                     System.out.println("no previous URLs");
-                }else {
-                    current = stack.pop();
                 }
-            }
-            if (stack.size() >= 1) {
-                System.out.println(stack.peek());
-            }else {
-                stack.push(current);
-                System.out.println("no previous URLs");
             }
         }
     }
