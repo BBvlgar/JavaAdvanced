@@ -1,0 +1,40 @@
+import java.util.ArrayDeque;
+import java.util.Scanner;
+
+public class BasicQueueOperations {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            ArrayDeque<String> stack = new ArrayDeque<>();
+
+            String input[] = scanner.nextLine().split("\\s+");
+            String output[] = scanner.nextLine().split("\\s+");
+            boolean check;
+            int min = Integer.MAX_VALUE;
+
+            for (int i = 0; i < Integer.parseInt(input[0]); i++) {
+                stack.offer(output[i]);
+            }
+            for (int i = 0; i < Integer.parseInt(input[1]); i++) {
+                stack.poll();
+            }
+            if (!stack.isEmpty()) {
+                check = stack.contains(input[2]);
+                if (check) {
+                    System.out.println(check);
+                } else {
+                    min = Integer.MAX_VALUE;
+                    for (int i = 0; i < stack.size(); i++) {
+
+                        int curr = Integer.parseInt(stack.poll());
+                        if (curr < min){
+                            min = curr;
+                        }
+                    }
+                    System.out.println(min);
+                }
+            }else {
+                System.out.println(0);
+            }
+        }
+    }
