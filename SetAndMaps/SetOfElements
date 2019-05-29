@@ -1,0 +1,32 @@
+package company.SetsAndMaps;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+
+public class SetOfElements {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+
+        LinkedHashSet<Integer> firstNumbers = new LinkedHashSet<>();
+        LinkedHashSet<Integer> secondNumbers = new LinkedHashSet<>();
+
+        while (n-- > 0){
+            int number = scanner.nextInt();
+
+            firstNumbers.add(number);
+        }
+
+        while (m-- > 0){
+            int number = scanner.nextInt();
+            secondNumbers.add(number);
+        }
+
+        firstNumbers.retainAll(secondNumbers);
+
+        firstNumbers.forEach(e -> System.out.print(e + " "));
+    }
+}
