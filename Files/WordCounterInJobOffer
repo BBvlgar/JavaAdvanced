@@ -16,10 +16,9 @@ public class Smetka {
                    "Familiarity with Spring is a plus\n" +
                    "English language fluency\n" +
                    "12 hours ago\n" +
-                   "Denislav said\n" +
                    "5+ years experience with JavaScript\n" +
                    "Experience in developing cross-browser web applications\n" +
-                   "Expert level in HTML5/CSS3\n" +";
+                   "Expert level in HTML5/CSS3\n";
 
            texta = texta.toLowerCase().replaceAll("[^A-Za-z\\s+]"," ");
            texta = texta.toLowerCase().replaceAll("javascript","js");
