@@ -1,0 +1,76 @@
+package OOPJAVA.Box;
+
+public class Box {
+
+    private double lenght;
+    private double width;
+    private double height;
+
+    public Box(double lenght, double width , double height){
+
+        setLenght(lenght);
+        setWidth(width);
+        setHeight(height);
+    }
+
+    private void setLenght(double lenght) {
+
+            try{
+                validation(lenght);
+                this.lenght = lenght;
+            } catch (Exception e) {
+                System.out.println("Lenght cannot be zero or negative.");
+                System.exit(0);
+            }
+    }
+
+    private void setWidth(double width) {
+
+        try{
+            validation(width);
+            this.width = width;
+        } catch (Exception e) {
+            System.out.println("Width cannot be zero or negative.");
+            System.exit(0);
+        }
+    }
+
+    private void setHeight(double height) {
+
+        try{
+            validation(height);
+            this.height = height;
+        } catch (Exception e) {
+            System.out.println("Height cannot be zero or negative.");
+            System.exit(0);
+        }
+    }
+
+    public double calculateVolume(){
+
+        return this.lenght * this.height * this.width;
+    }
+
+    public double calculateSurfaceArea(){
+
+        return 2*this.lenght * this.width + 2 *this.lenght * this.height + 2 * this.width * this.height;
+    }
+
+    public double calculateLateralSurfaceArea() {
+
+        return 2*this.lenght * this.height + 2 * this.width * this.height;
+    }
+
+    private boolean validation(double num) throws Exception {
+
+        try{
+            if (num >0){
+                return true;
+            } else {
+                throw new Exception();
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+}
