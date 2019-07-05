@@ -1,0 +1,21 @@
+package OOPJAVA;
+
+import java.util.List;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+
+        RandomArrayList random = new RandomArrayList();
+
+        random.add(2);
+        random.add(111);
+        random.add(675);
+        random.add(3);
+        random.add(7);
+        random.add(6);
+
+        System.out.println(random.getRandomElement());
+
+    }
+}
